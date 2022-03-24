@@ -4,6 +4,7 @@ from pathlib import Path
 from dj_easy_log import load_loguru
 {% endif %}
 
+
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
 APPS_DIR = ROOT_DIR
 ADMIN_URL = "admin/"

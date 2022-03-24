@@ -25,7 +25,7 @@ urlpatterns = [
         kwargs={"exception": Exception("Page not Found")},
     ),
     path("500/", default_views.server_error),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
 
 
 urlpatterns += staticfiles_urlpatterns()

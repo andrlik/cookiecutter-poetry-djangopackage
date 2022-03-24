@@ -68,9 +68,10 @@ html_theme = "sphinx_rtd_theme"
 
 # Adding apidoc generation to setup so that RTD will build these on deploy.
 def run_apidoc(_):
-    from sphinx.ext.apidoc import main
     import os
     import sys
+
+    from sphinx.ext.apidoc import main
 
     sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
     cur_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "api")

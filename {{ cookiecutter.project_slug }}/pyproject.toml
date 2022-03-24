@@ -147,16 +147,16 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
-plugins = ["mypy_django_plugin.main"{% if cookiecutter.use_restframework == "y" -%}, mypy_drf_plugin.main{% endif %}]
+plugins = ["mypy_django_plugin.main"{% if cookiecutter.use_restframework == "y" -%}, "mypy_drf_plugin.main"{% endif %}]
 
-[[tool.mypy.overrides]]
-module = "mypy.plugins.django-stubs"
-django_settings_module = "tests.django_settings"
+
 
 [[tool.mypy.overrides]]
 module = "mypy-*.migrations.*"
 ignore_errors = true
 
+[tool.django-stubs]
+django_settings_module = "tests.django_settings"
 
 [tool.pytest.ini_options]
 # https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml

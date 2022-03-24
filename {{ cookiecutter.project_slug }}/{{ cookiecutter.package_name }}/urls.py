@@ -1,7 +1,9 @@
 from django.urls import path
 
+
 app_name = "{{ cookiecutter.package_name }}"
 
-urlpatterns = [
+
+urlpatterns = [  # type: ignore
     # Add your url paths here.
 ]
