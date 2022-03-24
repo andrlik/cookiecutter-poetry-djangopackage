@@ -1,4 +1,4 @@
-name: Codestyle Checks
+{% raw -%}name: Codestyle Checks
 
 # Enable Buildkit and let compose use it to speed up image building
 #env:
@@ -52,3 +52,4 @@ jobs:
 
       - name: Run pre-commit
         uses: pre-commit/action@v2.0.3
+  {% endraw %}

@@ -1,4 +1,4 @@
-name: Tests
+{% raw -%}name: Tests
 
 # Enable Buildkit and let compose use it to speed up image building
 #env:
@@ -50,14 +50,17 @@ jobs:
         poetry install
     - name: Test with pytest
       run: |
-        sqlite3 tests/django_quotes.db '.databases'
+        {% endraw %}
+        sqlite3 tests/{{ cookiecutter.package_name }}.db '.databases'
+        {% raw -%}
         poetry run python manage.py collectstatic --noinput
         poetry run pytest --cov-report=
         poetry run coverage lcov
+        {% endraw %}
     {% if cookiecutter.use_coveralls == 'y' %}
     - name: Submit coverage data to coveralls.io
       uses: coverallsapp/github-action@master
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: {% raw -%}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         path-to-lcov: "coverage.lcov"
     {% endif %}
