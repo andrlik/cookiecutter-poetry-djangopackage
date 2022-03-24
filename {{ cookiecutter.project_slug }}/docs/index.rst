@@ -11,6 +11,7 @@ Welcome to {{ cookiecutter.project_name }} documentation!
    :caption: Contents:
 
    quickstart
+   security
    changelog
 
 
