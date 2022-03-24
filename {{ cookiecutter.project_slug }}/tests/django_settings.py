@@ -3,7 +3,6 @@ from pathlib import Path
 {% if cookiecutter.use_loguru == "y" -%}
 from dj_easy_log import load_loguru
 {% endif %}
-
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
 APPS_DIR = ROOT_DIR
 ADMIN_URL = "admin/"
@@ -67,10 +66,8 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
-    {% endif %}
-    {% if cookiecutter.use_rules == "y" -%}
-    "rules.apps.AutodiscoverRulesConfig",
-    {% endif %}
+    {% endif %}{% if cookiecutter.use_rules == "y" -%}
+    "rules.apps.AutodiscoverRulesConfig",{% endif %}
 ]
 
 LOCAL_APPS = [
@@ -86,8 +83,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 AUTHENTICATION_BACKENDS = [
     {% if cookiecutter.use_rules == "y" -%}
     "rules.permissions.ObjectPermissionBackend",
-    {% endif %}
-    "django.contrib.auth.backends.ModelBackend",
+    {% endif %}"django.contrib.auth.backends.ModelBackend",
 ]
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -109,8 +105,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     {% if cookiecutter.use_restframework == "y" -%}
     "corsheaders.middleware.CorsMiddleware",
-    {% endif %}
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    {% endif %}"django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -214,8 +209,7 @@ LOGGING = {
             "handlers": ["console"],
             "level": "DEBUG",
             "propagate": True,
-        },
-        {% endif %}
+        },{% endif %}
     },
 }
 
@@ -258,5 +252,4 @@ REST_FRAMEWORK["TEST_REQUEST_DEFAULT_FORMAT"] = "json"  # noqa
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
 {% if cookiecutter.use_loguru == "y" -%}
-load_loguru(globals())
-{% endif %}
+load_loguru(globals()){% endif %}

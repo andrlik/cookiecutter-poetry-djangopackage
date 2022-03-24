@@ -152,7 +152,7 @@ plugins = ["mypy_django_plugin.main"{% if cookiecutter.use_restframework == "y" 
 
 
 [[tool.mypy.overrides]]
-module = "mypy-*.migrations.*"
+module = "*.migrations.*"
 ignore_errors = true
 
 [tool.django-stubs]
@@ -171,7 +171,7 @@ addopts = [
   "--tb=short",
   "--doctest-modules",
   "--doctest-continue-on-failure",
-  "--cov={{ cookiecutter.project_slug }}",
+  "--cov={{ cookiecutter.package_name }}",
   "--cov-report=term-missing", "--ds=tests.django_settings",
     "--reuse-db",
 ]

@@ -5,6 +5,7 @@ PYTHON := python
 #* Docker variables
 IMAGE := {{ cookiecutter.package_name }}
 VERSION := latest
+.DEFAULT_GOAL := help
 
 #* Poetry
 ## poetry-download     : Downloads and installs poetry

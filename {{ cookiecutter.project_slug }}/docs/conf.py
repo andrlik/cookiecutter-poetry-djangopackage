@@ -14,7 +14,6 @@ import os
 import sys
 
 import django
-import spacy
 
 if os.getenv("READTHEDOCS", default=False) == "True":
     sys.path.insert(0, os.path.abspath(".."))
