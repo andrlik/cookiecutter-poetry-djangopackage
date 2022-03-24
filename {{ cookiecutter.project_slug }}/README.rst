@@ -63,6 +63,48 @@ Features
 
 - TODO
 
+Developing
+----------
+
+If you don't already have poetry installed on your system, you can use:
+
+.. code-block::
+    $ make poetry-download
+
+Then install all the dependencies:
+
+.. code-block::
+    $ make install
+    $ make pre-commit-install
+
+Run codestyle:
+
+.. code-block::
+    $ make codestyle
+
+If you want to run safety checks:
+
+.. code-block::
+    $ make check-safety
+
+If you want to run tests:
+
+.. code-block::
+    $ make test
+
+If you want to check types:
+
+.. code-block::
+   $ make mypy
+
+If you want to check everything:
+
+.. code-block::
+   $ make lint
+
+In order to submit a pull request, it is expected that you've written tests and documentation for your changes,
+and that running ``make lint`` passes without issue.
+
 Credits
 --------
 
