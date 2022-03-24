@@ -1,4 +1,4 @@
-# This is cookiecutter-poetry-djangopackage
+# cookiecutter-poetry-djangopackage
 
 Use this template to get a modern skeleton for a reusable Django app that
 makes uses a `pyproject.toml` file for packaging, `poetry` for
