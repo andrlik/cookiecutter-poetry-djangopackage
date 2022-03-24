@@ -1,6 +1,6 @@
 from pathlib import Path
 
-{% if cookiecutter.use_loguru == "y" %}
+{% if cookiecutter.use_loguru == "y" -%}
 from dj_easy_log import load_loguru
 {% endif %}
 
@@ -62,13 +62,13 @@ DJANGO_APPS = [
     "django.forms",
 ]
 THIRD_PARTY_APPS = [
-    {% if cookiecutter.use_restframework == "y" %}
+    {% if cookiecutter.use_restframework == "y" -%}
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
     {% endif %}
-    {% if cookiecutter.use_rules == "y" %}
+    {% if cookiecutter.use_rules == "y" -%}
     "rules.apps.AutodiscoverRulesConfig",
     {% endif %}
 ]
@@ -84,7 +84,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
 AUTHENTICATION_BACKENDS = [
-    {% if cookiecutter.use_rules == "y" %}
+    {% if cookiecutter.use_rules == "y" -%}
     "rules.permissions.ObjectPermissionBackend",
     {% endif %}
     "django.contrib.auth.backends.ModelBackend",
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    {% if cookiecutter.use_restframework == "y" %}
+    {% if cookiecutter.use_restframework == "y" -%}
     "corsheaders.middleware.CorsMiddleware",
     {% endif %}
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -209,7 +209,7 @@ LOGGING = {
     },
     "root": {"level": "INFO", "handlers": ["console"]},
     "loggers": {
-        {% if cookiecutter.use_rules == "y" %}
+        {% if cookiecutter.use_rules == "y" -%}
         "rules": {
             "handlers": ["console"],
             "level": "DEBUG",
@@ -224,7 +224,7 @@ SECRET_KEY = "UKNSQClo0zUtSNlFq7wJYvMcIqMZrZ2MpwAKjDtBEAbvuJosEg1frjvmNX4HmA46" 
 # https://docs.djangoproject.com/en/dev/ref/settings/#test-runner
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
-{% if cookiecutter.use_restframework == "y" %}
+{% if cookiecutter.use_restframework == "y" -%}
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
@@ -257,6 +257,6 @@ REST_FRAMEWORK["TEST_REQUEST_DEFAULT_FORMAT"] = "json"  # noqa
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
-{% if cookiecutter.use_loguru == "y" %}
+{% if cookiecutter.use_loguru == "y" -%}
 load_loguru(globals())
 {% endif %}

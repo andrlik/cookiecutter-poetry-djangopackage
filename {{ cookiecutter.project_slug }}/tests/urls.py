@@ -9,7 +9,7 @@ from django.views import defaults as default_views
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path("app/", include("{{ cookiecutter.package_name }}.urls", namespace="{{ cookiecutter.package_name }}")),
-path(
+    path(
         "400/",
         default_views.bad_request,
         kwargs={"exception": Exception("Bad Request!")},

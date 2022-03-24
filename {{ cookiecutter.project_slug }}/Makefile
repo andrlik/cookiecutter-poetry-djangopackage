@@ -23,7 +23,7 @@ poetry-remove:
 install:
 	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
-	-poetry run mypy --install-types --non-interactive ./
+	poetry run mypy --install-types --non-interactive ./
 
 ## pre-commit-install  : Installs pre-commit into local git repo.
 .PHONY: pre-commit-install
