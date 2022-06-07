@@ -13,5 +13,6 @@
   "use_coveralls": "y",
   "use_restframework": "y",
   "use_rules": "y",
-  "use_loguru": "y"
+  "use_loguru": "y",
+  "use_just": "y"
 }

@@ -1,15 +1,11 @@
-##############################
-Quickstart
-##############################
+# Quickstart
 
 {{ cookiecutter.project_short_description }}
 
-Installation
--------------
+## Installation
 
 Add your installation instructions here.
 
-Usage
--------
+## Usage
 
 Add practical usage stuff here.
