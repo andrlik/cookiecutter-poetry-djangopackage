@@ -20,7 +20,7 @@ _pre-commit-install:
   poetry run pre-commit install
 
 # Installs dependencies and mypy types and installs pre-commit hooks.
-setup: _install _pre-commit_install
+setup: _install _pre-commit-install
 
 # Open django shell_plus instance.
 console:
