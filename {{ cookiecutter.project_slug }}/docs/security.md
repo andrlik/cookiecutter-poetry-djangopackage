@@ -1,1 +1,1 @@
-{% include-markdown "../SECURITY.md" %}
+{% raw %}{% include-markdown "../SECURITY.md" %}{% endraw -%}

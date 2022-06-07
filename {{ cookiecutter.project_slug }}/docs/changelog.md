@@ -1,1 +1,1 @@
-{% include-markdown "../CHANGELOG.md" %}
+{% raw %}{% include-markdown "../CHANGELOG.md" %}{% endraw -%}
