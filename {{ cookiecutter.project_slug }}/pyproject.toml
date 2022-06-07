@@ -101,6 +101,7 @@ exclude = '''
     | \.tox
     | \.venv
     | _build
+    | migrations
     | buck-out
     | build
     | dist
