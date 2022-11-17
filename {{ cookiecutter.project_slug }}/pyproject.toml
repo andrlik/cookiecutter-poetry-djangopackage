@@ -4,7 +4,7 @@ version = "{{ cookiecutter.version }}"
 description = """{{ cookiecutter.project_short_description }}"""
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.open_source_license }}"
-readme = "README.rst"
+readme = "README.md"
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 classifiers = [
@@ -22,7 +22,7 @@ classifiers = [
     {% endif %}
     "Framework :: Django",
 ]
-documentation = "https://{{ cookiecutter.project_slug }}.readthedocs.io/en/latest/"
+documentation = "https://{{ cookiecutter.github_username}}.github.io/{{ cookiecutter.project_slug }}"
 
 [tool.poetry.dependencies]
 python = "^3.9"

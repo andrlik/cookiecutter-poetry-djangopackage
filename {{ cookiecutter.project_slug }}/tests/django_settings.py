@@ -35,7 +35,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "django_quotes.db",
+        "NAME": "{{ cookiecutter.package_name }}.db",
         "ATOMIC_REQUESTS": True,
     }
 }
@@ -118,11 +118,11 @@ MIDDLEWARE = [
 # STATIC
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR / "django_quotes/staticfiles")
+STATIC_ROOT = str(ROOT_DIR / "{{ cookiecutter.package_name }}/staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [str(APPS_DIR / "django_quotes/static")]
+STATICFILES_DIRS = [str(APPS_DIR / "{{ cookiecutter.package_name }}/static")]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
