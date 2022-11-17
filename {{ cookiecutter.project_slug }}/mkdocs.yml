@@ -16,6 +16,7 @@ theme:
 repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/
 plugins:
   - search
+  - autorefs
   - include-markdown
   - mkdocstrings:
       handlers:
